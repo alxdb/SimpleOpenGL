@@ -1,4 +1,4 @@
-//
+ //
 //  main.cpp
 //  SimpleOpenGL
 //
@@ -7,9 +7,31 @@
 //
 
 #include <iostream>
+#include <OpenGL/gl3.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+#include "window.hpp"
+#include "SimpleOpenGL.hpp"
+
+using std::cout, std::endl;
+
+int main() {
+	Window window("SimpleOpenGL", 600, 600);
+	Shader basic("basic.vs.glsl", "basic.fs.glsl");
+	Shader inverse("basic.vs.glsl", "inverse.fs.glsl");
+	
+	Triangle triangle({-0.5, -0.5}, {0.0,  0.5}, {0.5, -0.5}, {0.6, 0.2, 0.3}, basic);
+	Rect rect({-0.5, 0.5}, {0.5, -0.5}, {0.1, 0.2, 0.3}, inverse);
+	
+	while(!window.shouldClose()) {
+		window.clear(0.8, 0.8, 0.8, 1.0);
+		
+		rect.draw();
+		triangle.draw();
+		
+		cout << glfwGetTime() << endl;
+		
+		window.update();
+	}
+	
+	return 0;
 }

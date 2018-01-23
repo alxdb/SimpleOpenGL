@@ -8,23 +8,53 @@
 
 /* Begin PBXBuildFile section */
 		FA01EBCB200EAC59008016FE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA01EBCA200EAC59008016FE /* main.cpp */; };
+		FA01EBD4200EB234008016FE /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA01EBD2200EB234008016FE /* window.cpp */; };
+		FA4E7D1F2017D30700B235B9 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4E7D1D2017D30700B235B9 /* triangle.cpp */; };
+		FA4E7D242017EBE400B235B9 /* rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4E7D222017EBE400B235B9 /* rect.cpp */; };
+		FA6060EA2017F3FD00C4B258 /* inverse.fs.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6060E92017F38800C4B258 /* inverse.fs.glsl */; };
+		FA74F7FE200EBA69009B289B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA74F7FD200EBA68009B289B /* OpenGL.framework */; };
+		FA74F7FF200EBA77009B289B /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA74F7FB200EB92D009B289B /* libglfw.3.3.dylib */; };
+		FA74F807200EBEF5009B289B /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA74F805200EBEF5009B289B /* shader.cpp */; };
+		FA74F809200EC0D1009B289B /* basic.vs.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA74F802200EBC5E009B289B /* basic.vs.glsl */; };
+		FA74F80A200EC0D1009B289B /* basic.fs.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA74F804200EBC8E009B289B /* basic.fs.glsl */; };
+		FA74F80D200EC5A6009B289B /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA74F80B200EC5A6009B289B /* object.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FA01EBC5200EAC59008016FE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				FA6060EA2017F3FD00C4B258 /* inverse.fs.glsl in CopyFiles */,
+				FA74F809200EC0D1009B289B /* basic.vs.glsl in CopyFiles */,
+				FA74F80A200EC0D1009B289B /* basic.fs.glsl in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FA01EBC7200EAC59008016FE /* SimpleOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA01EBCA200EAC59008016FE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		FA01EBD2200EB234008016FE /* window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = window.cpp; sourceTree = "<group>"; };
+		FA01EBD3200EB234008016FE /* window.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = window.hpp; sourceTree = "<group>"; };
+		FA4E7D1D2017D30700B235B9 /* triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = triangle.cpp; sourceTree = "<group>"; };
+		FA4E7D1E2017D30700B235B9 /* triangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = triangle.hpp; sourceTree = "<group>"; };
+		FA4E7D222017EBE400B235B9 /* rect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rect.cpp; sourceTree = "<group>"; };
+		FA4E7D232017EBE400B235B9 /* rect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rect.hpp; sourceTree = "<group>"; };
+		FA6060E72017EE0000C4B258 /* shapes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = shapes.hpp; sourceTree = "<group>"; };
+		FA6060E82017F26B00C4B258 /* SimpleOpenGL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SimpleOpenGL.hpp; sourceTree = "<group>"; };
+		FA6060E92017F38800C4B258 /* inverse.fs.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = inverse.fs.glsl; sourceTree = "<group>"; };
+		FA74F7FB200EB92D009B289B /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		FA74F7FD200EBA68009B289B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		FA74F802200EBC5E009B289B /* basic.vs.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = basic.vs.glsl; sourceTree = "<group>"; };
+		FA74F804200EBC8E009B289B /* basic.fs.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = basic.fs.glsl; sourceTree = "<group>"; };
+		FA74F805200EBEF5009B289B /* shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		FA74F806200EBEF5009B289B /* shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = shader.hpp; sourceTree = "<group>"; };
+		FA74F80B200EC5A6009B289B /* object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
+		FA74F80C200EC5A6009B289B /* object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA74F7FF200EBA77009B289B /* libglfw.3.3.dylib in Frameworks */,
+				FA74F7FE200EBA69009B289B /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +75,7 @@
 			children = (
 				FA01EBC9200EAC59008016FE /* SimpleOpenGL */,
 				FA01EBC8200EAC59008016FE /* Products */,
+				FA74F7F6200EB6E4009B289B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +90,73 @@
 		FA01EBC9200EAC59008016FE /* SimpleOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				FA01EBD6200EB24C008016FE /* Window */,
 				FA01EBCA200EAC59008016FE /* main.cpp */,
+				FA74F803200EBC62009B289B /* Shaders */,
+				FA74F808200EBEF8009B289B /* Shader */,
+				FA74F80E200EC5AA009B289B /* Object */,
+				FA4E7D202017D30D00B235B9 /* Shapes */,
+				FA6060E82017F26B00C4B258 /* SimpleOpenGL.hpp */,
 			);
 			path = SimpleOpenGL;
+			sourceTree = "<group>";
+		};
+		FA01EBD6200EB24C008016FE /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				FA01EBD2200EB234008016FE /* window.cpp */,
+				FA01EBD3200EB234008016FE /* window.hpp */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		FA4E7D202017D30D00B235B9 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				FA4E7D1D2017D30700B235B9 /* triangle.cpp */,
+				FA4E7D1E2017D30700B235B9 /* triangle.hpp */,
+				FA4E7D222017EBE400B235B9 /* rect.cpp */,
+				FA4E7D232017EBE400B235B9 /* rect.hpp */,
+				FA6060E72017EE0000C4B258 /* shapes.hpp */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		FA74F7F6200EB6E4009B289B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA74F7FD200EBA68009B289B /* OpenGL.framework */,
+				FA74F7FB200EB92D009B289B /* libglfw.3.3.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA74F803200EBC62009B289B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				FA74F802200EBC5E009B289B /* basic.vs.glsl */,
+				FA74F804200EBC8E009B289B /* basic.fs.glsl */,
+				FA6060E92017F38800C4B258 /* inverse.fs.glsl */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		FA74F808200EBEF8009B289B /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				FA74F805200EBEF5009B289B /* shader.cpp */,
+				FA74F806200EBEF5009B289B /* shader.hpp */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		FA74F80E200EC5AA009B289B /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				FA74F80B200EC5A6009B289B /* object.cpp */,
+				FA74F80C200EC5A6009B289B /* object.hpp */,
+			);
+			path = Object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA74F807200EBEF5009B289B /* shader.cpp in Sources */,
 				FA01EBCB200EAC59008016FE /* main.cpp in Sources */,
+				FA74F80D200EC5A6009B289B /* object.cpp in Sources */,
+				FA4E7D1F2017D30700B235B9 /* triangle.cpp in Sources */,
+				FA4E7D242017EBE400B235B9 /* rect.cpp in Sources */,
+				FA01EBD4200EB234008016FE /* window.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +231,7 @@
 		FA01EBCC200EAC59008016FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -141,7 +243,7 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -178,13 +280,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		FA01EBCD200EAC59008016FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -196,7 +299,7 @@
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -226,22 +329,35 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
 		FA01EBCF200EAC59008016FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Debug;
 		};
 		FA01EBD0200EAC59008016FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Release;
 		};
