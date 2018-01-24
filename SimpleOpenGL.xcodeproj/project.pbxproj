@@ -11,7 +11,10 @@
 		FA01EBD4200EB234008016FE /* window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA01EBD2200EB234008016FE /* window.cpp */; };
 		FA4E7D1F2017D30700B235B9 /* triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4E7D1D2017D30700B235B9 /* triangle.cpp */; };
 		FA4E7D242017EBE400B235B9 /* rect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA4E7D222017EBE400B235B9 /* rect.cpp */; };
-		FA6060EA2017F3FD00C4B258 /* inverse.fs.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6060E92017F38800C4B258 /* inverse.fs.glsl */; };
+		FA6060ED2019321C00C4B258 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA6060EB2019321C00C4B258 /* texture.cpp */; };
+		FA6060F12019329400C4B258 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA6060F02019329400C4B258 /* stb_image.cpp */; };
+		FA6060F420193F5200C4B258 /* water.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6060F22019342400C4B258 /* water.jpg */; };
+		FA6060F72019433200C4B258 /* arrow.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6060F62019432700C4B258 /* arrow.png */; };
 		FA74F7FE200EBA69009B289B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA74F7FD200EBA68009B289B /* OpenGL.framework */; };
 		FA74F7FF200EBA77009B289B /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA74F7FB200EB92D009B289B /* libglfw.3.3.dylib */; };
 		FA74F807200EBEF5009B289B /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA74F805200EBEF5009B289B /* shader.cpp */; };
@@ -27,7 +30,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				FA6060EA2017F3FD00C4B258 /* inverse.fs.glsl in CopyFiles */,
+				FA6060F72019433200C4B258 /* arrow.png in CopyFiles */,
+				FA6060F420193F5200C4B258 /* water.jpg in CopyFiles */,
 				FA74F809200EC0D1009B289B /* basic.vs.glsl in CopyFiles */,
 				FA74F80A200EC0D1009B289B /* basic.fs.glsl in CopyFiles */,
 			);
@@ -46,7 +50,12 @@
 		FA4E7D232017EBE400B235B9 /* rect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rect.hpp; sourceTree = "<group>"; };
 		FA6060E72017EE0000C4B258 /* shapes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = shapes.hpp; sourceTree = "<group>"; };
 		FA6060E82017F26B00C4B258 /* SimpleOpenGL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SimpleOpenGL.hpp; sourceTree = "<group>"; };
-		FA6060E92017F38800C4B258 /* inverse.fs.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = inverse.fs.glsl; sourceTree = "<group>"; };
+		FA6060EB2019321C00C4B258 /* texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
+		FA6060EC2019321C00C4B258 /* texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = texture.hpp; sourceTree = "<group>"; };
+		FA6060EF2019324C00C4B258 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = ../../../../repos/stb/stb_image.h; sourceTree = "<group>"; };
+		FA6060F02019329400C4B258 /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
+		FA6060F22019342400C4B258 /* water.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = water.jpg; sourceTree = "<group>"; };
+		FA6060F62019432700C4B258 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		FA74F7FB200EB92D009B289B /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		FA74F7FD200EBA68009B289B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		FA74F802200EBC5E009B289B /* basic.vs.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = basic.vs.glsl; sourceTree = "<group>"; };
@@ -90,6 +99,8 @@
 		FA01EBC9200EAC59008016FE /* SimpleOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				FA6060F32019342C00C4B258 /* Textures */,
+				FA6060EE2019322E00C4B258 /* Texture */,
 				FA01EBD6200EB24C008016FE /* Window */,
 				FA01EBCA200EAC59008016FE /* main.cpp */,
 				FA74F803200EBC62009B289B /* Shaders */,
@@ -122,6 +133,26 @@
 			path = Shapes;
 			sourceTree = "<group>";
 		};
+		FA6060EE2019322E00C4B258 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				FA6060EF2019324C00C4B258 /* stb_image.h */,
+				FA6060EB2019321C00C4B258 /* texture.cpp */,
+				FA6060EC2019321C00C4B258 /* texture.hpp */,
+				FA6060F02019329400C4B258 /* stb_image.cpp */,
+			);
+			path = Texture;
+			sourceTree = "<group>";
+		};
+		FA6060F32019342C00C4B258 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				FA6060F62019432700C4B258 /* arrow.png */,
+				FA6060F22019342400C4B258 /* water.jpg */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
 		FA74F7F6200EB6E4009B289B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +167,6 @@
 			children = (
 				FA74F802200EBC5E009B289B /* basic.vs.glsl */,
 				FA74F804200EBC8E009B289B /* basic.fs.glsl */,
-				FA6060E92017F38800C4B258 /* inverse.fs.glsl */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -217,9 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA74F807200EBEF5009B289B /* shader.cpp in Sources */,
+				FA6060F12019329400C4B258 /* stb_image.cpp in Sources */,
 				FA01EBCB200EAC59008016FE /* main.cpp in Sources */,
 				FA74F80D200EC5A6009B289B /* object.cpp in Sources */,
 				FA4E7D1F2017D30700B235B9 /* triangle.cpp in Sources */,
+				FA6060ED2019321C00C4B258 /* texture.cpp in Sources */,
 				FA4E7D242017EBE400B235B9 /* rect.cpp in Sources */,
 				FA01EBD4200EB234008016FE /* window.cpp in Sources */,
 			);

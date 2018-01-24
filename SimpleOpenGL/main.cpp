@@ -17,10 +17,12 @@ using std::cout, std::endl;
 int main() {
 	Window window("SimpleOpenGL", 600, 600);
 	Shader basic("basic.vs.glsl", "basic.fs.glsl");
-	Shader inverse("basic.vs.glsl", "inverse.fs.glsl");
 	
-	Triangle triangle({-0.5, -0.5}, {0.0,  0.5}, {0.5, -0.5}, {0.6, 0.2, 0.3}, basic);
-	Rect rect({-0.5, 0.5}, {0.5, -0.5}, {0.1, 0.2, 0.3}, inverse);
+	Texture arrow("arrow.png");
+	Texture water("water.jpg");
+	
+	Triangle triangle({-0.5, -0.5}, {0.0,  0.5}, {0.5, -0.5}, {1.0, 1.0, 1.0}, basic, water);
+	Rect rect({-0.5, 0.5}, {0.5, -0.5}, {0.7, 0.2, 0.3}, basic, arrow);
 	
 	while(!window.shouldClose()) {
 		window.clear(0.8, 0.8, 0.8, 1.0);

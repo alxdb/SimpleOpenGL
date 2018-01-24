@@ -14,6 +14,7 @@
 class Rect : public Object {
 public:
 	Rect(pos, pos, col, Shader&);
+	Rect(pos, pos, col, Shader&, Texture&);
 	Rect(pos, pos, col, col, col, col, Shader&);
 	~Rect();
 };

@@ -40,6 +40,22 @@ Triangle::Triangle(pos a, pos b, pos c, col colour, Shader& shader) : Object(sha
 	create();
 }
 
+Triangle::Triangle(pos a, pos b, pos c, col colour, Shader& shader, Texture& texture) : Object(shader) {
+	vertices.size = 3 * 8;
+	vertices.data = new float[vertices.size] {
+		a.x, a.y, 0.0, colour.r, colour.g, colour.b, 0.0, 0.0,
+		b.x, b.y, 0.0, colour.r, colour.g, colour.b, 0.5, 1.0,
+		c.x, c.y, 0.0, colour.r, colour.g, colour.b, 1.0, 0.0,
+	};
+	
+	elements.size = 3;
+	elements.data = new unsigned int[elements.size] {
+		0, 1, 2
+	};
+	
+	create(texture);
+}
+
 Triangle::~Triangle() {
 	delete vertices.data;
 	delete elements.data;

@@ -9,10 +9,10 @@
 #ifndef object_hpp
 #define object_hpp
 
-#include "shader.hpp"
-
-#include <vector>
 #include <OpenGL/gl3.h>
+
+#include "shader.hpp"
+#include "texture.hpp"
 
 struct vertex_data {
 	float* data;
@@ -26,11 +26,14 @@ struct element_data {
 
 class Object {
 public:
-	Object(Shader& shader);
-	Object(float* vertices, size_t vertices_size, unsigned int* elements, size_t elements_size, Shader& shader);
+	// Constructors
+	Object(Shader&);
+	Object(float*, size_t, unsigned int*, size_t, Shader&);
+	// Methods
 	template <typename T>
-	void bufferData(GLenum bufferType, unsigned int handle, T* data, size_t size, GLenum drawType);
+	void bufferData(GLenum, unsigned int, T*, size_t, GLenum);
 	void create();
+	void create(Texture&);
 	void draw();
 protected:
 	vertex_data vertices;
@@ -38,7 +41,7 @@ protected:
 	Shader& shader;
 	
 private:
-	unsigned int VAO, VBO, EBO;
+	unsigned int VAO, VBO, EBO, TEX;
 };
 
 #endif /* object_hpp */

@@ -12,5 +12,6 @@
 #include "shader.hpp"
 #include "object.hpp"
 #include "shapes.hpp"
+#include "texture.hpp"
 
 #endif /* SimpleOpenGL_h */

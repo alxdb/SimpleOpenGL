@@ -6,8 +6,6 @@
 //  Copyright © 2018 Alexander Davidson Bryan. All rights reserved.
 //
 
-#include <iostream>
-
 #include "object.hpp"
 
 Object::Object(Shader& shader) : shader(shader) {
@@ -25,6 +23,7 @@ Object::Object(float* vertices, size_t vertices_size, unsigned int* elements, si
 }
 
 void Object::create() {
+	TEX = 0;
 	glBindVertexArray(VAO);
 	
 	bufferData<float>(GL_ARRAY_BUFFER, VBO, vertices.data, vertices.size, GL_STATIC_DRAW);
@@ -36,10 +35,26 @@ void Object::create() {
 	glEnableVertexAttribArray(1);
 }
 
+void Object::create(Texture& texture) {
+	TEX = texture.getHandle();
+	glBindVertexArray(VAO);
+	
+	bufferData<float>(GL_ARRAY_BUFFER, VBO, vertices.data, vertices.size, GL_STATIC_DRAW);
+	bufferData<unsigned int>(GL_ELEMENT_ARRAY_BUFFER, EBO, elements.data, elements.size, GL_STATIC_DRAW);
+	
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+	glEnableVertexAttribArray(2);
+}
+
 void Object::draw() {
 	shader.use();
 	// shader.setTransform(transform);
 	glBindVertexArray(VAO);
+	glBindTexture(GL_TEXTURE_2D, TEX);
 	glDrawElements(GL_TRIANGLES, (int) elements.size, GL_UNSIGNED_INT, 0);
 }
 
