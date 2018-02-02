@@ -10,6 +10,9 @@
 #define object_hpp
 
 #include <OpenGL/gl3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include "shader.hpp"
 #include "texture.hpp"
@@ -26,22 +29,24 @@ struct element_data {
 
 class Object {
 public:
-	// Constructors
-	Object(Shader&);
 	Object(float*, size_t, unsigned int*, size_t, Shader&);
-	// Methods
-	template <typename T>
-	void bufferData(GLenum, unsigned int, T*, size_t, GLenum);
+	void draw();
+	void rotate(float angle, glm::vec3 vec);
+	void translate(glm::vec3 vec);
+	void rotateAbs(float angle, glm::vec3 vec);
+	void translateAbs(glm::vec3 vec);
+protected:
+	Object(Shader&);
 	void create();
 	void create(Texture&);
-	void draw();
-protected:
 	vertex_data vertices;
 	element_data elements;
-	Shader& shader;
-	
 private:
 	unsigned int VAO, VBO, EBO, TEX;
+	Shader& shader;
+	glm::mat4 model = glm::mat4(1.0);
+	template <typename T>
+	void bufferData(GLenum, unsigned int, T*, size_t, GLenum);
 };
 
 #endif /* object_hpp */

@@ -13,5 +13,10 @@
 #include "object.hpp"
 #include "shapes.hpp"
 #include "texture.hpp"
+#include "window.hpp"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/ext.hpp>
 
 #endif /* SimpleOpenGL_h */

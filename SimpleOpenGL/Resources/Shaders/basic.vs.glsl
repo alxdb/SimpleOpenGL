@@ -6,10 +6,12 @@ layout (location = 2) in vec2 aTex;
 out vec4 col;
 out vec2 tex;
 
-uniform mat4 transform;
+uniform mat4 view;
+uniform mat4 model;
+uniform mat4 projection;
 
 void main() {
-	gl_Position = vec4(aPos, 1.0);
+	gl_Position = projection * view * model * vec4(aPos, 1.0);
 	col = vec4(aCol, 1.0);
 	tex = aTex;
 }

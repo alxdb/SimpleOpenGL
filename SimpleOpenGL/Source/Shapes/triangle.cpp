@@ -8,6 +8,38 @@
 
 #include "shapes.hpp"
 
+Triangle::Triangle(col colour, Shader& shader, Texture& texture) : Object(shader) {
+	vertices.size = 3 * 8;
+	vertices.data = new float[vertices.size] {
+		-0.5, -0.5, 0.0, colour.r, colour.g, colour.b, 0.0, 0.0,
+		 0.0,  0.5, 0.0, colour.r, colour.g, colour.b, 0.5, 1.0,
+		 0.5, -0.5, 0.0, colour.r, colour.g, colour.b, 1.0, 0.0,
+	};
+	
+	elements.size = 3;
+	elements.data = new unsigned int[elements.size] {
+		0, 1, 2
+	};
+	
+	create(texture);
+}
+
+Triangle::Triangle(col colour, Shader& shader) : Object(shader) {
+	vertices.size = 3 * 6;
+	vertices.data = new float[vertices.size] {
+		-0.5, -0.5, 0.0, colour.r, colour.g, colour.b,
+		0.0,  0.5, 0.0, colour.r, colour.g, colour.b,
+		0.5, -0.5, 0.0, colour.r, colour.g, colour.b,
+	};
+	
+	elements.size = 3;
+	elements.data = new unsigned int[elements.size] {
+		0, 1, 2
+	};
+	
+	create();
+}
+
 Triangle::Triangle(point a, point b, point c, Shader& shader) : Object(shader) {
 	vertices.size = 3 * 6;
 	vertices.data = new float[vertices.size] {

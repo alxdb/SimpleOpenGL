@@ -4,15 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SimpleOpenGL.xcscheme</key>
+		<key>FakeCube.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Primitives.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>SimpleOpenGL.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>FA01EBC6200EAC59008016FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAAEA5D92023D3BA005CE7D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAAEA5E12023D483005CE7D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

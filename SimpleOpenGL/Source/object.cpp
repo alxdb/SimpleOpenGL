@@ -48,14 +48,32 @@ void Object::create(Texture& texture) {
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
+	
+	model = glm::mat4(1.0);
 }
 
 void Object::draw() {
 	shader.use();
-	// shader.setTransform(transform);
+	glUniformMatrix4fv(shader.modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 	glBindVertexArray(VAO);
 	glBindTexture(GL_TEXTURE_2D, TEX);
 	glDrawElements(GL_TRIANGLES, (int) elements.size, GL_UNSIGNED_INT, 0);
+}
+
+void Object::rotate(float angle, glm::vec3 vec) {
+	model = glm::rotate(model, glm::radians(angle), vec);
+}
+
+void Object::translate(glm::vec3 vec) {
+	model = glm::translate(model, vec);
+}
+
+void Object::rotateAbs(float angle, glm::vec3 vec) {
+	model = glm::rotate(glm::mat4(1.0), glm::radians(angle), vec);
+}
+
+void Object::translateAbs(glm::vec3 vec) {
+	model = glm::translate(glm::mat4(1.0), vec);
 }
 
 template <typename T>

@@ -13,6 +13,8 @@
 
 class Triangle : public Object {
 public:
+	Triangle(col, Shader&, Texture&);
+	Triangle(col, Shader&);
 	Triangle(point, point, point, Shader&);
 	Triangle(pos, pos, pos, col, Shader&);
 	Triangle(pos, pos, pos, col, Shader&, Texture&);

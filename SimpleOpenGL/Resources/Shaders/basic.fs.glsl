@@ -12,6 +12,4 @@ void main() {
 	} else {
 		FragColor = texture(Texture, tex) * col;
 	}
-	
-	
 }

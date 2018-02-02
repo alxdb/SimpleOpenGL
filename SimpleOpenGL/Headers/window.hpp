@@ -10,7 +10,9 @@
 #define window_hpp
 
 #define GLFW_INCLUDE_GLCOREARB
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
+
+double getTime();
 
 class Window {
 	GLFWwindow* windowID;

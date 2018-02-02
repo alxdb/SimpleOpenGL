@@ -34,6 +34,8 @@ Window::Window(const char * name, int width, int height) {
 	
 	std::cout << "Window " << windowID << " created" << std::endl;
 	glfwMakeContextCurrent(windowID);
+	
+	glEnable(GL_DEPTH_TEST);
 }
 
 Window::~Window() {
@@ -52,5 +54,9 @@ bool Window::shouldClose() {
 
 void Window::clear(float r, float g, float b, float alpha) {
 	glClearColor(r, g, b, alpha);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+double getTime() {
+	return glfwGetTime();
 }

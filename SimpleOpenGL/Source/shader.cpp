@@ -12,6 +12,8 @@
 #include <string>
 
 #include <OpenGL/gl3.h>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "shader.hpp"
 
@@ -40,19 +42,27 @@ void checkShaderError(unsigned int handle, GLenum type) {
 	glGetShaderiv(handle, type, &success);
 	if (!success) {
 		glGetShaderInfoLog(handle, 512, NULL, infoLog);
-		cerr << "shader error" << endl;
+		if (type == GL_LINK_STATUS) {
+			cerr << "shader error on link" << endl;
+		} else {
+			cerr << "shader error" << endl;
+		}
 		cerr << infoLog << endl;
 	}
 }
 
-void checkProgramError(unsigned int handle) {
+void checkProgramError(unsigned int handle, GLenum type) {
 	int success = 0;
 	char infoLog[512];
 	
-	glGetProgramiv(handle, GL_LINK_STATUS, &success);
+	glGetProgramiv(handle, type, &success);
 	if (!success) {
 		glGetShaderInfoLog(handle, 512, NULL, infoLog);
-		cerr << "Program error" << endl;
+		if (type == GL_LINK_STATUS) {
+			cerr << "shader error on link" << endl;
+		} else {
+			cerr << "shader error" << endl;
+		}
 		cerr << infoLog << endl;
 	}
 }
@@ -68,7 +78,7 @@ GLuint compileShader(const GLchar * source, GLenum type) {
 	return shaderHandle;
 }
 
-Shader::Shader(const char * vertFilename, const char * fragFilename) {
+Shader::Shader(const char * vertFilename, const char * fragFilename, glm::mat4 projection) {
 	string vertSourceStr = readFile(vertFilename);
 	string fragSourceStr = readFile(fragFilename);
 	
@@ -85,7 +95,30 @@ Shader::Shader(const char * vertFilename, const char * fragFilename) {
 	glDeleteShader(vertShader);
 	glDeleteShader(fragShader);
 	
-	checkProgramError(handle);
+	checkProgramError(handle, GL_LINK_STATUS);
+	
+	viewLoc = glGetUniformLocation(handle, "view");
+	projLoc = glGetUniformLocation(handle, "projection");
+	modelLoc = glGetUniformLocation(handle, "model");
+	
+	glUseProgram(handle);
+	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+	this->projection = projection;
+}
+
+void Shader::setView() {
+	glUseProgram(handle);
+	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+}
+
+void Shader::translateView(glm::vec3 vec) {
+	view = glm::translate(view, vec);
+	setView();
+}
+
+void Shader::rotateView(float angle, glm::vec3 vec) {
+	view = glm::rotate(view, glm::radians(angle), vec);
+	setView();
 }
 
 void Shader::use() {
