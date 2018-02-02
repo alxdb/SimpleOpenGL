@@ -74,8 +74,8 @@ int main() {
 			rect.translate(vec3(0.0, sin(time + M_PI_2) * 1e-2, 0.0));
 		}
 		
-		for (int i = 0; i < fakeCube.size(); i++) {
-			fakeCube[i].draw();
+		for (Rect& rect : fakeCube) {
+			rect.draw();
 		}
 		
 		window.update();
