@@ -10,7 +10,8 @@
 
 #include "SimpleOpenGL.hpp"
 
-using std::cout, std::endl;
+using std::cout;
+using std::endl;
 
 int width = 600;
 int height = 600;
@@ -20,10 +21,10 @@ glm::mat4 ortho = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, 0.1f, 100.0f);
 
 int main() {
 	Window window("SimpleOpenGL", width, height);
-	Shader shader("basic.vs.glsl", "basic.fs.glsl", ortho);
+	Shader shader("SimpleOpenGL/res/Shaders/basic.vs.glsl", "SimpleOpenGL/res/Shaders/basic.fs.glsl", ortho);
 
-	Texture arrow("arrow.png");
-	Texture water("water.jpg");
+	Texture arrow("SimpleOpenGL/res/Textures/arrow.png");
+	Texture water("SimpleOpenGL/res/Textures/water.jpg");
 	
 	Triangle triangle({1.0, 1.0, 1.0}, shader, water);
 	Rect rect1({1.0, 0.0, 0.0}, shader, arrow);
