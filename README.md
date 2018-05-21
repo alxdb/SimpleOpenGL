@@ -1,4 +1,4 @@
 # SimpleOpenGL
-processing-esque library for OpenGL in C++
+processing-esque 3D library for OpenGL in C++
 
-Currently mac only, but source should be almost cross compatible. Minor changes to preprocessing symbols may be necessary, and there is currently no extension loader (macOS doesn't need it).
+Currently only tested on mac, but source should be almost cross compatible. Minor changes to header names and macros are probably necessary, and GLEW may also be required.
