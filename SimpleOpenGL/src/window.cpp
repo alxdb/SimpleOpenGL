@@ -16,25 +16,25 @@ void error_callback(int error, const char * description) {
 
 Window::Window(const char * name, int width, int height) {
 	glfwSetErrorCallback(error_callback);
-	
+
 	if (!glfwInit()) exit(EXIT_FAILURE);
-	
+
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); //required for macOS
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	
+
 	windowID = glfwCreateWindow(width, height, name, NULL, NULL);
-	
+
 	if (!windowID) {
 		glfwTerminate();
 		std::cerr << "Failed to create GLFW window" << std::endl;
 		exit(EXIT_FAILURE);
 	};
-	
+
 	std::cout << "Window " << windowID << " created" << std::endl;
 	glfwMakeContextCurrent(windowID);
-	
+
 	glEnable(GL_DEPTH_TEST);
 }
 

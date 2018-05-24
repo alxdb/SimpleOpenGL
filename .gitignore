@@ -2,3 +2,5 @@
 *.so
 .build
 .tags
+*.vs.h
+*.fs.h

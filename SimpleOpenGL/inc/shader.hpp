@@ -11,11 +11,10 @@
 
 #include <glm/glm.hpp>
 
-
 class Shader {
 	unsigned int handle;
 public:
-	Shader(const char * vertexFilename, const char * fragmentFilename, glm::mat4 projection);
+	Shader(glm::mat4 projection);
 	void use();
 	void setView();
 	void translateView(glm::vec3);

@@ -21,7 +21,7 @@ glm::mat4 ortho = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, 0.1f, 100.0f);
 
 int main() {
 	Window window("SimpleOpenGL", width, height);
-	Shader shader("SimpleOpenGL/res/Shaders/basic.vs.glsl", "SimpleOpenGL/res/Shaders/basic.fs.glsl", ortho);
+	Shader shader(ortho);
 
 	Texture arrow("SimpleOpenGL/res/Textures/arrow.png");
 	Texture water("SimpleOpenGL/res/Textures/water.jpg");

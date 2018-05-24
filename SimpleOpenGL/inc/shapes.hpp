@@ -25,7 +25,7 @@ struct point {
 	col col;
 };
 
-#include "triangle.hpp"
-#include "rect.hpp"
+#include "Shapes/triangle.hpp"
+#include "Shapes/rect.hpp"
 
 #endif /* shapes_h */
