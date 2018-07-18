@@ -1,5 +1,6 @@
 # SimpleOpenGL
-processing-esque 3D library for OpenGL in C++
+processing-esque 3D library for OpenGL in C++.
+
 This Project has been sunsetted. Future OpenGL work will be done in https://github.com/alxdb/adbGL
 
 # Requirements
