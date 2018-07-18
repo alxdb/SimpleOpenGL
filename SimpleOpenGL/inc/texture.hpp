@@ -9,7 +9,8 @@
 #ifndef texture_hpp
 #define texture_hpp
 
-#include <OpenGL/gl3.h>
+// #include <OpenGL/gl3.h>
+#include "OGL.h"
 
 #include "stb_image.h"
 

@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  FakeCube
-//
-//  Created by Alexander Davidson Bryan on 01/02/2018.
-//  Copyright © 2018 Alexander Davidson Bryan. All rights reserved.
-//
-
 #include <iostream>
 #include <vector>
 

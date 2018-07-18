@@ -1,25 +1,9 @@
-//
-//  object.cpp
-//  SimpleOpenGL
-//
-//  Created by Alexander Davidson Bryan on 16/01/2018.
-//  Copyright © 2018 Alexander Davidson Bryan. All rights reserved.
-//
-
 #include "object.hpp"
 
 Object::Object(Shader& shader) : shader(shader) {
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
 	glGenBuffers(1, &EBO);
-}
-
-Object::Object(float* vertices, size_t vertices_size, unsigned int* elements, size_t elements_size, Shader& shader) : Object(shader) {
-	this->vertices.data = vertices;
-	this->vertices.size = vertices_size/sizeof(float);
-	this->elements.data = elements;
-	this->elements.size = elements_size/sizeof(unsigned int);
-	create();
 }
 
 void Object::create() {

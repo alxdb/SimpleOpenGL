@@ -1,15 +1,8 @@
-//
-//  object.hpp
-//  SimpleOpenGL
-//
-//  Created by Alexander Davidson Bryan on 16/01/2018.
-//  Copyright © 2018 Alexander Davidson Bryan. All rights reserved.
-//
-
 #ifndef object_hpp
 #define object_hpp
 
-#include <OpenGL/gl3.h>
+// #include <OpenGL/gl3.h>
+#include "OGL.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -29,7 +22,7 @@ struct element_data {
 
 class Object {
 public:
-	Object(float*, size_t, unsigned int*, size_t, Shader&);
+	// Object(float*, size_t, unsigned int*, size_t, Shader&);
 	void draw();
 	void rotate(float angle, glm::vec3 vec);
 	void translate(glm::vec3 vec);
@@ -49,4 +42,4 @@ private:
 	void bufferData(GLenum, unsigned int, T*, size_t, GLenum);
 };
 
-#endif /* object_hpp */
+#endif

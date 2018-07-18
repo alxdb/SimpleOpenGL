@@ -4,3 +4,8 @@
 .tags
 *.vs.h
 *.fs.h
+compile_commands.json
+tags
+.idea
+.vscode
+cmake-build-debug
